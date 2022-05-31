@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObserverCanvas : MonoBehaviour
 {
     public GameObject panelManaging;
+    public GameObject panelMause;
     public KeyCode keyManaging;
     public ExampleClass player;
     public bool openPanelManaging;
@@ -24,14 +25,17 @@ public class ObserverCanvas : MonoBehaviour
             if (openPanelManaging)
             {
                 panelManaging.SetActive(true);
+                panelMause.SetActive(false);
                 player.enabled = false;
             }
             else
             {
                 panelManaging.SetActive(false);
+                panelMause.SetActive(true);
                 player.enabled = true;
             }
         }
+        
     }
 
     public void StartKeys()

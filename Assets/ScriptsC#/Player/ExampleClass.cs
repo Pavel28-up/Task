@@ -3,9 +3,7 @@ using System.Collections;
 
 public class ExampleClass : MonoBehaviour 
 {
-    [SerializeField] private float _speed;
     private Transform player;
-    private Transform player2;
     private Transform _startMarker;
     private Transform _endMarker;
     private float startTime;
@@ -14,8 +12,6 @@ public class ExampleClass : MonoBehaviour
 
     public Transform startMarker;
     public Transform endMarker;
-    public Vector3 _target;
-    public Vector3 mouse;
     public float speed = 1.0F;
     public float _position;
 
@@ -30,14 +26,14 @@ public class ExampleClass : MonoBehaviour
 
     void Update() 
     {
-        if (PlayerPrefs.GetString("control") == "Keys")
-        {
+        // if (PlayerPrefs.GetString("control") == "Keys")
+        // {
             MovementCKeys();
-        }
-        if (PlayerPrefs.GetString("control") == "Mouse")
-        {
-            MouseButton();
-        }
+        // }
+        // if (PlayerPrefs.GetString("control") == "Mouse")
+        // {
+        //     MouseButton();
+        // }
     }
 
     public void MovementCKeys()
@@ -63,25 +59,25 @@ public class ExampleClass : MonoBehaviour
 
     public void MouseButton()
     {
-        if (Input.GetMouseButton(0)) 
-        {
-            mouse = Input.mousePosition;
-            Ray castPoint = Camera.main.ScreenPointToRay(mouse);
-            RaycastHit hit;
-            if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
-            {
-                player.position = hit.point;
-                // player.position = new Vector3(0, 0, 0);
-                // player.transform.position = hit.point;
-                print(player.position.y);
-                // startMarker = player;
-                // endMarker = _endMarker;
-                // float distCovered = (Time.time - startTime) * speed;
-                // float fracJourney = distCovered / journeyLength;
-                // transform.position = Vector3.Lerp(startMarker.position, endMarker.position, fracJourney);
-                // Debug.Log(mouse.x);
-            }
-        }
+        // if (Input.GetMouseButton(0)) 
+        // {
+        //     mouse = Input.mousePosition;
+        //     Ray castPoint = Camera.main.ScreenPointToRay(mouse);
+        //     RaycastHit hit;
+        //     if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
+        //     {
+        //         player.position = hit.point;
+        //         // player.position = new Vector3(0, 0, 0);
+        //         // player.transform.position = hit.point;
+        //         print(player.position.y);
+        //         // startMarker = player;
+        //         // endMarker = _endMarker;
+        //         // float distCovered = (Time.time - startTime) * speed;
+        //         // float fracJourney = distCovered / journeyLength;
+        //         // transform.position = Vector3.Lerp(startMarker.position, endMarker.position, fracJourney);
+        //         // Debug.Log(mouse.x);
+        //     }
+        // }
         // transform.position = Vector3.MoveTowards(_target, 0, 0);
     }
 }
