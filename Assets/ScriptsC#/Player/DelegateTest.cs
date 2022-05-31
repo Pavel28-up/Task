@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObserverCanvas : MonoBehaviour
+public class DelegateTest : MonoBehaviour 
 {
+    public delegate void DelegateTestButts(DelegateTest p);
+    public event DelegateTestButts buttKeysEvent;
+    public event DelegateTestButts buttMouseEvent;
     public GameObject panelManaging;
     public GameObject panelMause;
     public KeyCode keyManaging;
     public ExampleClass player;
+    public KeyCode keys;
+    public KeyCode mous;
     public bool openPanelManaging;
+    
 
     public string _control;
 
@@ -25,13 +31,13 @@ public class ObserverCanvas : MonoBehaviour
             panelMause.SetActive(false);
             player.enabled = true;
         }
-        if (PlayerPrefs.GetString("control") == "")
-        {
-            PlayerPrefs.SetString("control", "Keys");
-            _control = PlayerPrefs.GetString("control");
-            panelMause.SetActive(false);
-            player.enabled = true;
-        }
+        // if (PlayerPrefs.GetString("control") == "")
+        // {
+        //     PlayerPrefs.SetString("control", "Keys");
+        //     _control = PlayerPrefs.GetString("control");
+        //     panelMause.SetActive(false);
+        //     player.enabled = true;
+        // }
     }
 
     void Update()
@@ -56,21 +62,21 @@ public class ObserverCanvas : MonoBehaviour
 
     public void StartKeys()
     {
-        // if (Application.platform == RuntimePlatform.WindowsEditor)
-        // {
-        //     Debug.Log("Do something special here!");
-            PlayerPrefs.SetString("control", "Keys");
-            _control = PlayerPrefs.GetString("control");
-        // }
+        buttKeysEvent(this);
+        print("Keys");
+        player.enabled = true;
+        panelMause.SetActive(false);
+        PlayerPrefs.SetString("control", "Keys");
+         _control = PlayerPrefs.GetString("control");
     }
 
     public void StartMouse()
     {
-        // if (Application.platform == RuntimePlatform.Android)
-        // {
-            // Debug.Log("Do something special here!");
-            PlayerPrefs.SetString("control", "Mouse");
-            _control = PlayerPrefs.GetString("control");
-        // }
+        buttMouseEvent(this);
+        print("Mouse");
+        player.enabled = false;
+        panelMause.SetActive(true);
+        PlayerPrefs.SetString("control", "Mouse");
+        _control = PlayerPrefs.GetString("control");
     }
 }

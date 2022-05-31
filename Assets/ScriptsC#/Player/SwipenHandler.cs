@@ -9,17 +9,19 @@ public class SwipenHandler : MonoBehaviour, IBeginDragHandler, IDragHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Vector3 delta = eventData.delta;
-        if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
+        if (PlayerPrefs.GetString("control") == "Mouse")
         {
-            
-            if (delta.x > 0)
+            Vector3 delta = eventData.delta;
+            if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
             {
-                player.position = endMarker.position;
-            }
-            else
-            {
-               player.position = startMarker.position;
+                if (delta.x > 0)
+                {
+                    player.position = endMarker.position;
+                }
+                else
+                {
+                player.position = startMarker.position;
+                }
             }
         }
     }

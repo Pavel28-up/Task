@@ -26,14 +26,10 @@ public class ExampleClass : MonoBehaviour
 
     void Update() 
     {
-        // if (PlayerPrefs.GetString("control") == "Keys")
-        // {
+        if (PlayerPrefs.GetString("control") == "Keys")
+        {
             MovementCKeys();
-        // }
-        // if (PlayerPrefs.GetString("control") == "Mouse")
-        // {
-        //     MouseButton();
-        // }
+        }
     }
 
     public void MovementCKeys()
@@ -55,29 +51,5 @@ public class ExampleClass : MonoBehaviour
             float fracJourney = distCovered / journeyLength;
             transform.position = Vector3.Lerp(endMarker.position, startMarker.position, fracJourney);
         }
-    }
-
-    public void MouseButton()
-    {
-        // if (Input.GetMouseButton(0)) 
-        // {
-        //     mouse = Input.mousePosition;
-        //     Ray castPoint = Camera.main.ScreenPointToRay(mouse);
-        //     RaycastHit hit;
-        //     if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
-        //     {
-        //         player.position = hit.point;
-        //         // player.position = new Vector3(0, 0, 0);
-        //         // player.transform.position = hit.point;
-        //         print(player.position.y);
-        //         // startMarker = player;
-        //         // endMarker = _endMarker;
-        //         // float distCovered = (Time.time - startTime) * speed;
-        //         // float fracJourney = distCovered / journeyLength;
-        //         // transform.position = Vector3.Lerp(startMarker.position, endMarker.position, fracJourney);
-        //         // Debug.Log(mouse.x);
-        //     }
-        // }
-        // transform.position = Vector3.MoveTowards(_target, 0, 0);
     }
 }

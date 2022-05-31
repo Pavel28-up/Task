@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 104713206}
   - component: {fileID: 104713205}
   - component: {fileID: 104713204}
-  - component: {fileID: 104713208}
+  - component: {fileID: 104713209}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -225,7 +225,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &104713208
+--- !u!114 &104713209
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -234,14 +234,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 104713203}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2414796fa1da18a4da21d23b6f528972, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f3cf8b5311dfb041bb637cd7e51d4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   panelManaging: {fileID: 763361725}
   panelMause: {fileID: 861742488}
   keyManaging: 27
   player: {fileID: 527917951}
+  keys: 101
+  mous: 113
   openPanelManaging: 0
+  _control: 
 --- !u!1 &287325767
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 298.89532, y: -344.33173}
+  m_AnchoredPosition: {x: 298.89532, y: -431.46637}
   m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &287325769
@@ -325,8 +328,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104713208}
-        m_TargetAssemblyTypeName: ObserverCanvas, Assembly-CSharp
+      - m_Target: {fileID: 104713209}
+        m_TargetAssemblyTypeName: DelegateTest, Assembly-CSharp
         m_MethodName: StartMouse
         m_Mode: 1
         m_Arguments:
@@ -389,6 +392,7 @@ GameObject:
   - component: {fileID: 527917946}
   - component: {fileID: 527917952}
   - component: {fileID: 527917951}
+  - component: {fileID: 527917950}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -473,6 +477,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &527917950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527917945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3978dc5293460459a31fc3bdd282c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &527917951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,7 +963,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Key
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -974,8 +990,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 91
+  m_fontSizeBase: 91
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -1239,7 +1255,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 298.89532, y: -229.33173}
+  m_AnchoredPosition: {x: 298.89532, y: -316.46637}
   m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1417942450
@@ -1286,8 +1302,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 104713208}
-        m_TargetAssemblyTypeName: ObserverCanvas, Assembly-CSharp
+      - m_Target: {fileID: 104713209}
+        m_TargetAssemblyTypeName: DelegateTest, Assembly-CSharp
         m_MethodName: StartKeys
         m_Mode: 1
         m_Arguments:
@@ -1495,7 +1511,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Mouse
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1522,8 +1538,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 84.4
+  m_fontSizeBase: 84.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
