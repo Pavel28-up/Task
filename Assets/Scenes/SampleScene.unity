@@ -241,8 +241,8 @@ MonoBehaviour:
   panelMause: {fileID: 861742488}
   keyManaging: 27
   player: {fileID: 527917951}
-  keys: 101
-  mous: 113
+  keys: {fileID: 1417942450}
+  mous: {fileID: 287325769}
   openPanelManaging: 0
   _control: 
 --- !u!1 &287325767
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 287325770}
   - component: {fileID: 287325769}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Mouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -327,19 +327,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 287325770}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 104713209}
-        m_TargetAssemblyTypeName: DelegateTest, Assembly-CSharp
-        m_MethodName: StartMouse
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &287325770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1232,7 +1220,7 @@ GameObject:
   - component: {fileID: 1417942451}
   - component: {fileID: 1417942450}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1301,19 +1289,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1417942451}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 104713209}
-        m_TargetAssemblyTypeName: DelegateTest, Assembly-CSharp
-        m_MethodName: StartKeys
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1417942451
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DelegateTest : MonoBehaviour 
 {
@@ -11,8 +12,8 @@ public class DelegateTest : MonoBehaviour
     public GameObject panelMause;
     public KeyCode keyManaging;
     public ExampleClass player;
-    public KeyCode keys;
-    public KeyCode mous;
+    public Button keys;
+    public Button mous;
     public bool openPanelManaging;
     
 
@@ -20,6 +21,7 @@ public class DelegateTest : MonoBehaviour
 
     void Start()
     {
+        
         _control = PlayerPrefs.GetString("control");
         if (PlayerPrefs.GetString("control") == "Mouse")
         {
@@ -31,13 +33,17 @@ public class DelegateTest : MonoBehaviour
             panelMause.SetActive(false);
             player.enabled = true;
         }
-        // if (PlayerPrefs.GetString("control") == "")
-        // {
-        //     PlayerPrefs.SetString("control", "Keys");
-        //     _control = PlayerPrefs.GetString("control");
-        //     panelMause.SetActive(false);
-        //     player.enabled = true;
-        // }
+        if (PlayerPrefs.GetString("control") == "")
+        {
+            PlayerPrefs.SetString("control", "Keys");
+            _control = PlayerPrefs.GetString("control");
+            panelMause.SetActive(false);
+            player.enabled = true;
+        }
+        Button btn2 = mous.GetComponent<Button>();
+        btn2.onClick.AddListener(StartMouse);
+        Button btn1 = keys.GetComponent<Button>();
+        btn1.onClick.AddListener(StartKeys);
     }
 
     void Update()
@@ -54,8 +60,16 @@ public class DelegateTest : MonoBehaviour
             else
             {
                 panelManaging.SetActive(false);
-                panelMause.SetActive(true);
-                player.enabled = true;
+                if (PlayerPrefs.GetString("control") == "Mouse")
+                {
+                    panelMause.SetActive(true);
+                    player.enabled = false;
+                }
+                else
+                {
+                    panelMause.SetActive(false);
+                    player.enabled = true;
+                }
             }
         }
     }
@@ -64,18 +78,14 @@ public class DelegateTest : MonoBehaviour
     {
         buttKeysEvent(this);
         print("Keys");
-        player.enabled = true;
-        panelMause.SetActive(false);
         PlayerPrefs.SetString("control", "Keys");
-         _control = PlayerPrefs.GetString("control");
+        _control = PlayerPrefs.GetString("control");
     }
 
     public void StartMouse()
     {
         buttMouseEvent(this);
         print("Mouse");
-        player.enabled = false;
-        panelMause.SetActive(true);
         PlayerPrefs.SetString("control", "Mouse");
         _control = PlayerPrefs.GetString("control");
     }
